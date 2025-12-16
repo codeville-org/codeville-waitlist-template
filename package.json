@@ -3,13 +3,19 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "bun run --bun astro dev",
-    "build": "bun run --bun astro build",
+    "build:client": "bun run --bun astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "bunx prettier . --write",
     "format:check": "bunx prettier . --check",
-    "lint": "eslint 'src/**/*.{js,ts,tsx,astro}'"
+    "lint": "eslint 'src/**/*.{js,ts,tsx,astro}'",
+    "client": "bun run --bun astro dev",
+    "worker": "wrangler dev",
+    "dev": "concurrently \"bun run client\" \"bun run worker\"",
+    "dryrun:staging": "bun run build:client && wrangler deploy --dry-run --env staging",
+    "dryrun:prod": "bun run build:client && wrangler deploy --dry-run --env production",
+    "deploy:staging": "bun run build:client && wrangler deploy --env staging",
+    "deploy:prod": "bun run build:client && wrangler deploy --env production"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
@@ -25,6 +31,7 @@
     "clsx": "^2.1.1",
     "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.5.0",
+    "hono": "^4.11.1",
     "lucide-react": "^0.561.0",
     "motion": "^12.23.26",
     "prettier": "^3.7.4",
@@ -34,7 +41,8 @@
     "react-dom": "^19.2.3",
     "rough-notation": "^0.5.1",
     "tailwind-merge": "^3.4.0",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "wrangler": "^4.54.0"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^8.50.0",
