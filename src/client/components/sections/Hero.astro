@@ -1,0 +1,95 @@
+---
+import JoinField from "@client/components/elements/JoinField.astro";
+import { GridPattern } from "@client/components/ui/grid-pattern";
+import { LightRays } from "@client/components/ui/light-rays";
+import { Highlighter } from "@client/components/ui/highlighter";
+---
+
+<div
+  class="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-4"
+>
+  <!-- Background Effects -->
+  <div class="absolute inset-0 -z-10">
+    <GridPattern
+      width={60}
+      height={60}
+      x={-1}
+      y={-1}
+      className="opacity-20 dark:opacity-30"
+      squares={[
+        [4, 4],
+        [5, 1],
+        [8, 2],
+        [6, 6],
+        [13, 3],
+        [10, 8],
+        [17, 5],
+        [15, 10],
+      ]}
+    />
+    <LightRays
+      count={8}
+      color="rgba(139, 92, 246, 0.15)"
+      blur={40}
+      speed={16}
+      length="75vh"
+      className="opacity-90 dark:opacity-40"
+    />
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex max-w-4xl flex-col items-center text-center">
+    <!-- Main Heading -->
+    <h1
+      class="font-heading mb-6 text-6xl font-bold tracking-tight md:text-7xl lg:text-8xl"
+    >
+      CodeVille.dev
+    </h1>
+
+    <!-- Tagline with Highlighter -->
+    <p class="mb-4 max-w-2xl text-xl font-medium md:text-2xl">
+      Join our waitlist to be the first to experience the{" "}
+      <Highlighter
+        client:visible
+        action="highlight"
+        color="#a78bfa"
+        strokeWidth={2}
+        padding={4}
+        isView={true}
+      >
+        future of coding collaboration
+      </Highlighter>
+    </p>
+
+    <!-- Launch Info -->
+    <div
+      class="border-border bg-secondary/50 mb-12 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium backdrop-blur-sm"
+    >
+      <span class="relative flex size-2">
+        <span
+          class="bg-primary absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
+        ></span>
+        <span class="bg-primary relative inline-flex size-2 rounded-full"
+        ></span>
+      </span>
+      <span class="text-muted-foreground">Estimated Launch: Q1 2026</span>
+    </div>
+
+    <!-- Email Input -->
+    <div class="w-full max-w-md">
+      <JoinField />
+    </div>
+
+    <!-- Additional Info -->
+    <p class="text-muted-foreground mt-6 text-sm">
+      Join <span class="text-foreground font-semibold">2,000+</span> developers already
+      on the waitlist
+    </p>
+  </div>
+
+  <!-- Gradient Overlay -->
+  <div
+    class="from-background to-background pointer-events-none absolute inset-0 -z-5 bg-linear-to-t via-transparent opacity-60"
+  >
+  </div>
+</div>

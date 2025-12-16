@@ -1,0 +1,26 @@
+---
+import { MailIcon } from "lucide-react";
+
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+} from "@client/components/ui/input-group";
+---
+
+<div class="w-full">
+  <InputGroup className="bg-background h-12">
+    <InputGroupAddon>
+      <MailIcon className="size-5" strokeWidth={1} />
+    </InputGroupAddon>
+
+    <InputGroupInput type="email" placeholder="Enter your email" />
+
+    <InputGroupAddon align="inline-end">
+      <InputGroupButton variant={"default"} className="h-9 rounded-md px-6">
+        Join
+      </InputGroupButton>
+    </InputGroupAddon>
+  </InputGroup>
+</div>

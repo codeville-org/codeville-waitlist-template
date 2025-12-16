@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
+    "@fontsource/bricolage-grotesque": "^5.2.10",
     "@fontsource/inter": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
     "@radix-ui/react-slot": "^1.2.4",
     "@tailwindcss/vite": "^4.1.18",
     "@types/react": "^19.2.7",
@@ -24,11 +26,13 @@
     "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.5.0",
     "lucide-react": "^0.561.0",
+    "motion": "^12.23.26",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "rough-notation": "^0.5.1",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18"
   },
