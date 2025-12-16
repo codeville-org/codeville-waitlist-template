@@ -9,7 +9,9 @@
   "env": {
     "staging": {
       "vars": {
-        "ENVIRONMENT": "staging"
+        "ENVIRONMENT": "staging",
+        "CF_ACCESS_DOMAIN": "https://vihangarashansilva.cloudflareaccess.com",
+        "POLICY_AUD": "93c237dd6fe8fae2af77e456c8cb0f772cea99451e017fc4444c86ee85008080"
       }
     },
     "production": {
