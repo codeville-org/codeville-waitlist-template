@@ -6,13 +6,30 @@
     "directory": "./dist",
     "binding": "ASSETS"
   },
+
+  // D1 Binding: for Local Dev
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "codeville-waitlist-local-db",
+      "database_id": "97ed9381-1159-4b19-ba23-8eaf8737d91a"
+    }
+  ],
+
   "env": {
     "staging": {
       "vars": {
         "ENVIRONMENT": "staging",
         "CF_ACCESS_DOMAIN": "https://vihangarashansilva.cloudflareaccess.com",
         "POLICY_AUD": "93c237dd6fe8fae2af77e456c8cb0f772cea99451e017fc4444c86ee85008080"
-      }
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "codeville-waitlist-staging-db",
+          "database_id": "97ed9381-1159-4b19-ba23-8eaf8737d91a"
+        }
+      ]
     },
     "production": {
       "vars": {
