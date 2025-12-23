@@ -12,7 +12,8 @@
     {
       "binding": "DB",
       "database_name": "codeville-waitlist-local-db",
-      "database_id": "97ed9381-1159-4b19-ba23-8eaf8737d91a"
+      "database_id": "97ed9381-1159-4b19-ba23-8eaf8737d91a",
+      "migrations_dir": "./src/server/database/migrations"
     }
   ],
 
@@ -27,7 +28,8 @@
         {
           "binding": "DB",
           "database_name": "codeville-waitlist-staging-db",
-          "database_id": "97ed9381-1159-4b19-ba23-8eaf8737d91a"
+          "database_id": "97ed9381-1159-4b19-ba23-8eaf8737d91a",
+          "migrations_dir": "./src/server/database/migrations"
         }
       ]
     },
